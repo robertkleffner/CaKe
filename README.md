@@ -5,9 +5,15 @@ An interpreter for a minimal but Turing-complete stack based 'concatenative' eso
 
 ### About
 
-CaKe is an extremely minimal stack-based 'concatenative' language. This tiny interpreter for it is written in Python. I put concatenative in quotes (perhaps I should have used brackets?) because I tried desparately to make the composition of two pieces of a quotation fully concatenative (meaning `[ck` would be a valid program as well as `kc]`), but it didn't quite work out.
+CaKe is an extremely minimal 'concatenative' language which performs all of its work on a stack. This tiny interpreter for it is written in Python. I put concatenative in quotes (perhaps I should have used brackets?) because I tried desparately to make the composition of two pieces of a quotation fully concatenative (meaning `[ck` would be a valid program as well as `kc]`), but it didn't quite work out.
 
-The basic and extremely simple interpreter is entirely free of inner recursion, meaning you never have to worry about overflowing Python's stack. The nature of the language, however, means that it allocates a lot of memory, most of which it discards nearly instantaneously, so writing an infinite loop will still give Python's garbage collector a decent work out.
+The basic and extremely simple interpreter is entirely free of inner recursion, meaning you never have to worry about overflowing Python's stack. The nature of the language, however, means that it allocates a lot of memory in a very short amount of time, most of which it discards nearly instantaneously, so writing an infinite loop will still give Python's garbage collector a decent cardio workout.
+
+### Example
+
+```[[]cckck@\n@!@p@o@t@s@ @t@i@ @e@k@a@M..............[[]]ckk][]cckck[[]]ckk```
+
+This little program prints 'Make it stop!' in an infinite loop (while also not overflowing the program stack).
 
 ### Theory
 
@@ -21,7 +27,7 @@ In addition, I suspect that `c` and `k` are not the smallest basis that could be
 
 * Interpreter is entirely free of inner recursion, so infinite loops which do not overflow the program stack (by exhausting the Python program's memory) will run forever without crashing.
 * Two input and output built-ins (`@x` pushes character x onto the stack, `.` pops the top character and prints it. This setup makes printing input back to the user somewhat tricky)
-* Two combinator built-ins (`c` and `k`)
+* Two combinator built-ins: `c` and `k` (for more on how to use these, see Kerby's page or the comments in the interpreter)
 * Quotations work pretty much as they do in Joy, and can be nested infinitely
 * Interactive REPL (shows the stack after running every line of code)
 

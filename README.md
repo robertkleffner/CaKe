@@ -30,11 +30,12 @@ In addition, I suspect that `c` and `k` are not the smallest basis that could be
 * Two combinator built-ins: `c` and `k` (for more on how to use these, see Kerby's page or the comments in the interpreter)
 * Quotations work pretty much as they do in Joy, and can be nested infinitely
 * Interactive REPL (shows the stack after running every line of code)
+* Type 'quit' when your brain is sufficiently cooked (its not really a combinator though)
 
 ### Baddies
 
-* Type safety/checking
-* Robust interpreter error handling (most often, if your input is invalid, it'll just crash with no clue how to fix it)
+* No type safety/checking
+* Minimal interpreter error handling (most often, if your input is invalid, it'll just crash with no clue how to fix it)
 * The ability to define and use functions besides `c`, `k`, `@`, and `.`
 * No built in types besides characters and quotations
 * * This means no ints, no booleans, no classes, objects, or variables

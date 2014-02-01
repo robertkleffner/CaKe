@@ -1,7 +1,7 @@
 CaKe
 ====
 
-An interpreter for a minimal but Turing-complete stack based 'concatenative' esolang.
+An interpreter for a minimal but Turing-complete stack based 'concatenative' esolang. Now also includes an interpreter for zquote, which is even more minimal while still being Turing complete.
 
 ### About
 

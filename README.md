@@ -17,19 +17,21 @@ I have since made a second language very similar to CaKe, except it only uses th
 
 ```[[]cckck@\n@!@p@o@t@s@ @t@i@ @e@k@a@M..............[[]]ckk][]cckck[[]]ckk```
 
-This little program prints 'Make it stop!' in an infinite loop (while also not overflowing the program stack).
+This little program prints 'Make it stop!' in an infinite loop (while also not overflowing the program stack). In zquote, however, things are much worse and less terse:
 
-```[[][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz@\n@!@d@l@r@o@W@ @,@o@l@l@e@H..............[[]][][][[][][]zz[][]zz]z[][]zz[][]zz][][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz[[]][][][[][][]zz[][]zz]z[][]zz[][]zz```
+```
+[[][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz@\n@!@d@l@r@o@W@ @,@o@l@l@e@H..............[[]][][][[][][]zz[][]zz]z[][]zz[][]zz][][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz[[]][][][[][][]zz[][]zz]z[][]zz[][]zz
+```
 
-This program prints 'Hello, World!' in an infinite loop using the z language. Notice how exponentially worse a single combinator basis is! For further comparison, here's the `dup` command (which duplicates the top item on the stack) in CaKe:
+This program prints 'Hello, World!' in an infinite loop using the zquote language. Notice how many more commands are involved when programming in a single basis! For further comparison, here's the `dup` command (which duplicates the top item on the stack) in CaKe:
 
-```[]cckck```
+`[]cckck`
 
 And here's the same command implemented in zquote:
 
-```[][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz```
+`[][][][[][][]zz[][]zz]z[][][[][][]zz[][]zz]z[][]zz[][][[][][]zz[][]zz]z[][]zz`
 
-For dup, CaKe uses 7 characters, but zquote uses an astonishing 77 characters! Also, every `z` present in a zquote program performs *at least* the equivalent work of both a `c` and `k` in CaKe, so its operating time and memory usage are significantly worse while making for longer programs!
+For `dup`, CaKe uses 7 characters, but zquote uses an astonishing 77 characters! Also, every `z` present in a zquote program performs *at least* the equivalent work of both a `c` and `k` in CaKe, so its operating time and memory usage are significantly worse while making for longer programs!
 
 ### Theory
 

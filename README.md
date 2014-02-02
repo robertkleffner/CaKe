@@ -13,6 +13,10 @@ The basic and extremely simple interpreter is entirely free of inner recursion, 
 
 I have since made a second language very similar to CaKe, except it only uses the 'z' combinator and quotations, as discussed [here](http://groups.yahoo.com/neo/groups/concatenative/conversations/topics/3178), again by the lucid Brent Kerby. The interpreter for that language is in zquote.py.
 
+#### Update 2
+
+In the same thread in the link above, both Kerby and William Tanksley Jr. give complete 'flat' bases for concatenative combinators. While the quotation syntax is elegant and very useful to have, I couldn't resist the urge to implement an interpreter for Tanksley's flat basis, which now resides in the ok.py file. A small description can be found at the bottom of this file.
+
 ### Example
 
 ```[[]cckck@\n@!@p@o@t@s@ @t@i@ @e@k@a@M..............[[]]ckk][]cckck[[]]ckk```
@@ -63,3 +67,23 @@ Apparently I don't have as many video games to play as I thought. However, after
 * * This means no ints, no booleans, no classes, objects, or variables
 * Whitespace is not allowed unless it follows an `@` (which can only be used to push a whitespace character onto the stack)
 * Debugging is extremely difficult unless one thinks in terms of more useful combinators (I've provided translations for a good number in some comments in the interpreter code)
+
+### Flat version - update 2
+
+In the concatenative discussion emails referenced above, both Kerby and William Tanksley Jr. give 'flat' combinator bases. What 'flat' means here is that the quotation notation `[]` is entirely absent from the program. Instead, only two combinators are present in the language: `o` and `k`. `o` pushes three different items onto the stack, while `k` does what it normally does. I get the sense that `k` is extremely fundamental.
+
+I implemented an interpreter for this language in the ok.py file. The test base is much smaller, because ok programs grow like super weeds in fertile ground. Example: here's `dip`, a fundamental concatenative combinator, represented in CaKe:
+
+`ck`
+
+Yup, just two characters. This is awesome, because `dip` is really powerful. Here's the same combinator in ok:
+
+`ookokookkokoookokookkokkookokookkokkookokookokookkokookookokookkokkookokookokookkokookkookokookkokkookkookokookkokkookkookokookkokkookkkookkk`
+
+From 2 characters to 141 is quite a jump. Needless to say, I haven't tried implementing my infinite hello world loop in ok yet. I'm a bit frightened of what the results might be. However, not all combinators share this relationship. `k` in CaKe is the same as `k` in ok. Furthermore, here's the `zap` combinator in both languages:
+
+CaKe: `[]k`
+
+ok: `ok`
+
+The ok version is actually a character shorter! However, for the most part, ok programs are exponentially larger than their CaKe counterparts due to the lack of an explicit quotation mechanism.

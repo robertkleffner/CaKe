@@ -78,7 +78,9 @@ I implemented an interpreter for this language in the ok.py file. The test base 
 
 Yup, just two characters. This is awesome, because `dip` is really powerful. Here's the same combinator in ok:
 
-`ookokookkokoookokookkokkookokookkokkookokookokookkokookookokookkokkookokookokookkokookkookokookkokkookkookokookkokkookkookokookkokkookkkookkk`
+```
+ookokookkokoookokookkokkookokookkokkookokookokookkokookookokookkokkookokookokookkokookkookokookkokkookkookokookkokkookkookokookkokkookkkookkk
+```
 
 From 2 characters to 141 is quite a jump. Needless to say, I haven't tried implementing my infinite hello world loop in ok yet. I'm a bit frightened of what the results might be. However, not all combinators share this relationship. `k` in CaKe is the same as `k` in ok. Furthermore, here's the `zap` combinator in both languages:
 
